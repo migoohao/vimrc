@@ -1,8 +1,11 @@
-set nocompatible
+syntax on
+syntax enable
+
 filetype on
 filetype plugin on
-syntax enable
-syntax on
+filetype indent on
+
+set nocompatible
 set showcmd
 set ruler
 set number
@@ -10,7 +13,6 @@ set cursorline
 set ttimeoutlen=0
 set autoindent
 set smartindent
-filetype indent on
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -19,8 +21,11 @@ set smarttab
 set wildmenu
 set hlsearch
 set ignorecase
+set noswapfile
 
 call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
@@ -39,3 +44,5 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 "clear search hilight
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
+"replace vimgrep with rg
+set grepprg=rg\ --vimgrep\ --smart-case\ --follow
