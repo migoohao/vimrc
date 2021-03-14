@@ -10,7 +10,6 @@ set showcmd
 set ruler
 set number
 set cursorline
-set ttimeoutlen=0
 set autoindent
 set smartindent
 set expandtab
@@ -24,9 +23,9 @@ set ignorecase
 set noswapfile
 
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/fzf'
+Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf.vim'
-Plug 'altercation/vim-colors-solarized'
+Plug 'junegunn/fzf'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -34,9 +33,7 @@ Plug 'tpope/vim-repeat'
 call plug#end()
 
 "theme
-set background=dark
-colorscheme solarized
-let g:solarized_termcolors=256
+colorscheme gruvbox
 
 "nerdtree
 nnoremap <leader>n :NERDTreeToggle<CR>
