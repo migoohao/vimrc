@@ -10,7 +10,6 @@ set showcmd
 set ruler
 set number
 set cursorline
-set ttimeoutlen=0
 set autoindent
 set smartindent
 set expandtab
@@ -22,11 +21,13 @@ set wildmenu
 set hlsearch
 set ignorecase
 set noswapfile
+set hidden
+set clipboard=unnamed
 
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/fzf'
+Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf.vim'
-Plug 'altercation/vim-colors-solarized'
+Plug 'junegunn/fzf'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -34,15 +35,14 @@ Plug 'tpope/vim-repeat'
 call plug#end()
 
 "theme
+colorscheme gruvbox
 set background=dark
-colorscheme solarized
-let g:solarized_termcolors=256
 
 "nerdtree
 nnoremap <leader>n :NERDTreeToggle<CR>
 
 "clear search hilight
-nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+nnoremap <esc><esc> :noh<return><esc>
 
 "replace vimgrep with rg
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow
