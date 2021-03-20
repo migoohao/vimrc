@@ -32,6 +32,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'chiel92/vim-autoformat'
 call plug#end()
 
 "theme
@@ -46,3 +47,6 @@ nnoremap <esc><esc> :noh<return><esc>
 
 "replace vimgrep with rg
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow
+
+"autoformat
+noremap <F3> :Autoformat<CR>
