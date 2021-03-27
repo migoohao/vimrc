@@ -26,6 +26,7 @@ set noswapfile
 set hidden
 set clipboard=unnamed
 set shortmess-=S
+set diffopt+=vertical
 
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
