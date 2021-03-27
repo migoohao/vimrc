@@ -19,8 +19,13 @@ set softtabstop=4
 set smarttab
 set wildmenu
 set hlsearch
+set incsearch
 set ignorecase
+set smartcase
 set noswapfile
+set hidden
+set clipboard=unnamed
+set shortmess-=S
 
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
@@ -30,16 +35,24 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'chiel92/vim-autoformat'
 call plug#end()
 
 "theme
 colorscheme gruvbox
+set background=dark
 
 "nerdtree
 nnoremap <leader>n :NERDTreeToggle<CR>
 
 "clear search hilight
-nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+nnoremap <esc><esc> :noh<return><esc>
 
 "replace vimgrep with rg
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow
+
+"autoformat
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
+au BufWrite * :Autoformat
